@@ -1,16 +1,5 @@
-/* body {
+body {
     background-image: url("bg.png");
-} */
-
-.bg-img {
-  background-image: url("bg.png");
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px);
-  z-index: -1;
 }
 
 .container {
