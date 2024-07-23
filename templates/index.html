@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Sentimen Tokopedia</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="bg-img"></div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 style="text-align: center;">Analisis Sentimen by Wildan Amru Primarifki</h4>
+                <br>
+                <div class="card">
+                    <div class="card-header text-center" style="color: rgb(36, 138, 138);">
+                        <h1><b>Analisis Sentimen Tokopedia</b></h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{url_for('predict')}}" method="POST">
+                            <div class="form-group mb-3">
+                                <textarea name="text" class="form-control" rows="3" placeholder="Masukkan teks yang ingin diprediksi" required="required"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">Prediksi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header text-center" style="color: rgb(36, 138, 138);">
+                        <h2><b>Hasil Prediksi</b></h2>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Teks: </b>{{ text }}</p>
+                        <p><b>Sentimen: </b>{{ prediksi }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
